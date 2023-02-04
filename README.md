@@ -1,23 +1,30 @@
 # Image Classification using AWS SageMaker
 
-Use AWS Sagemaker to train a pretrained model that can perform image classification by using the Sagemaker profiling, debugger, hyperparameter tuning and other good ML engineering practices. This can be done on either the provided dog breed classication data set or one of your choice.
-
-## Project Set Up and Installation
-Enter AWS through the gateway in the course and open SageMaker Studio. 
-Download the starter files.
-Download/Make the dataset available. 
+In this project, we use AWS Sagemaker to train a pretrained model that can perform image classification by using the Sagemaker profiling, debugger, hyperparameter tuning and other good ML engineering practices.
 
 ## Dataset
-The provided dataset is the dogbreed classification dataset which can be found in the classroom.
-The project is designed to be dataset independent so if there is a dataset that is more interesting or relevant to your work, you are welcome to use it to complete the project.
+The provided dataset is the dog breed classification dataset which can be found in the classroom. 
+It contains images from 133 dog breeds divided into training, testing and validation datasets. The dataset can be 
+downloaded from [here](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip).
+
+**Note**: The project is designed to be dataset independent so if there is a dataset that is more interesting or relevant to your work, you are welcome to use it to complete the project.
+
+## Project Set Up and Installation
+
+1. Open Sagemaker Studio and create a folder for your project
+2. Clone the project [repo](https://github.com/udacity/CD0387-deep-learning-topics-within-computer-vision-nlp-project-starter) from the Sagemaker Studio.
+3. Download the dataset from [here](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip)
+4. Unzip the files(if needed)
+
+We use [train_and_deploy.ipynb](./train_and_deploy.ipynb) which helps us interface with Sagemaker and submit training 
+jobs to it.
 
 ### Access
-Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has access to the data. 
+Upload them to an S3 bucket so that Sagemaker can use them for training.
 
 [<img src="./images/01.png">](#)
 
 ## Hyperparameter Tuning
-What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 I chose ResNet50 for its ease of use, light weight, and computational power.
 
@@ -38,6 +45,9 @@ After hyperparamater tuning phase, the model will be trained with best hyperpara
 part of the logs inside the job corresponding to training & testing phase of the model.
 
 [<img src="./images/04.png">](#)
+
+[hpo.py](./hpo.py) script is the one which be used for setting up hyperparameter tuning process. We use 
+[train_model.py](./train_model.py) for handling the training phase of our classification task.
 
 ## Debugging and Profiling
 
