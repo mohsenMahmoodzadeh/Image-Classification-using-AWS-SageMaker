@@ -79,12 +79,17 @@ and put them in estimator instance:
 
 ### Results
 
+#### Debugger Line plot
+[<img src="./images/09.png">](#)
+As we can see, our training job is so IO-intensive because ```GPUMemoryUtilization``` is oscillating due to memory 
+allocation and release. This observation is compatible with coming results obtained from profiler.
+
 #### Operators
 
 For both CPU and GPU operators, the three most expensive operations were:
 1. copy_
-2. to
-3. contiguous
+2. contiguous
+3. to
 
 which makes sense because these operations deal with memory transfers and allocations.
 
@@ -94,7 +99,7 @@ which makes sense because these operations deal with memory transfers and alloca
 for synchronizations, or a small batch size.
 
 Since the batch size is 16 in our experiment, it's worth to try bigger 
-numbers for batch_size hyperparameter because ```BatchSize``` rule was triggered twelve times in the experiment.
+numbers for batch_size hyperparameter because ```BatchSize``` rule was triggered six times in the experiment.
 
 
 ## Model Deployment
