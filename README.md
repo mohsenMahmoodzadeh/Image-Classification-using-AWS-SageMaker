@@ -120,6 +120,3 @@ With having ```predictor``` instance, we can invoke the endpoint by some predict
 [<img src="./images/08.png">](#)
 
 As we can see, the model has a successful prediction on this sample case.
-
-## Standout Suggestions
-**TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
