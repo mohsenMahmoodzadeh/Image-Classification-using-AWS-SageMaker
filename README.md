@@ -2,6 +2,8 @@
 
 In this project, we use AWS Sagemaker to train a pretrained model that can perform image classification by using the Sagemaker profiling, debugger, hyperparameter tuning and other good ML engineering practices.
 
+**Note**: This repository relates to AWS Machine Learning Engineer nanodegree provided by Udacity.
+
 ## Dataset
 The provided dataset is the dog breed classification dataset which can be found in the classroom. 
 It contains images from 133 dog breeds divided into training, testing and validation datasets. The dataset can be 
